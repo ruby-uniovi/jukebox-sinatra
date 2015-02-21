@@ -1,3 +1,3 @@
-require 'lib/app'
+require_relative 'lib/app'
 
 run Sinatra::Application
