@@ -16,7 +16,7 @@ get "/queue" do
   erb :queue
 end
 
-class Queue
+class SongQueue
   attr_reader :songs
 
   def initialize(songs)
@@ -41,5 +41,5 @@ def build_sample_queue
   one_song = Song.new("19 días y 500 noches", "Joaquín Sabina")
   other_song = Song.new("Semilla en la tierra", "Carlos Chaouen")  
   
-  Queue.new([one_song, other_song])
+  SongQueue.new([one_song, other_song])
 end
