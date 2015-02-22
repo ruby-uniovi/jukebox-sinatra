@@ -5,10 +5,13 @@ if development?
   require "sinatra/reloader" 
 end
 
+configure do
+  set :bind, "0.0.0.0"
+end
+
 configure :development do
   use BetterErrors::Middleware  
   BetterErrors.application_root = File.expand_path('..', __FILE__)
-  set :bind, "0.0.0.0"
 end
 
 get "/queue" do
