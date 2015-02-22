@@ -27,6 +27,20 @@ describe Song do
     end
   end
 
+  describe ".create_sample_songs" do
+
+    it "creates some songs if there are none" do
+      Song.create_sample_songs
+      expect(Song.all).to_not be_empty
+    end
+
+    it "doesn't create songs if there are some already" do
+      Song.create(:artist => "A", :title => "T", :url => "URL")
+      expect {Song.create_sample_songs}.to_not change {Song.count}
+    end
+
+  end
+
 
 
 end
