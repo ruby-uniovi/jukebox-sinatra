@@ -7,7 +7,7 @@ end
 
 configure do
   set :bind, "0.0.0.0"
-  Mongoid.load!("config/mongoid.yml")
+  Mongoid.load!("config/mongoid.yml", settings.environment)
   Dir["lib/models/**/*.rb"].each {|model_path| require "./#{model_path}"}
 end
 
