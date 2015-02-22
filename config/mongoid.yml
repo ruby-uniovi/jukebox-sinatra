@@ -1,0 +1,23 @@
+development:
+  sessions:
+    default:
+      hosts:
+        - localhost
+      database: jukebox_dev
+
+test:
+  sessions:
+    default:
+      hosts:
+        - localhost
+      database: jukebox_test
+
+# Set this variables using heroku config:set
+production:
+  sessions:
+    default:
+      hosts:
+        - "<%= ENV['MONGOID_HOST'] %>:<%= ENV['MONGOID_PORT'] %>"
+      username: <%= ENV['MONGOID_USERNAME'] %>
+      password: <%= ENV['MONGOID_PASSWORD'] %>
+      database: <%= ENV['MONGOID_DATABASE'] %>

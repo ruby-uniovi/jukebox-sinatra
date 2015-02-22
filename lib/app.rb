@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'mongoid'
 
 if development?
   require 'better_errors'
@@ -7,6 +8,8 @@ end
 
 configure do
   set :bind, "0.0.0.0"
+  Mongoid.load!("config/mongoid.yml")
+  Dir["models/**/*.rb"].each {|model| require_relative model}
 end
 
 configure :development do
