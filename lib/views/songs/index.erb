@@ -1,7 +1,8 @@
 <div class="songs">
   <ul>
     <% @songs.each do |song| %>
-      <li> <a href="<%= song.url%>"><%= song.artist %> - <%= song.title %></a></li>
+      <li> <a href="<%= song.url%>"><%= song.artist %> - <%= song.title %></a></li> <a href="/song/<%=song.id%>">Play</a>
     <% end %>
   </ul>
+  <a href="/songs/new">New</a>
 </div>

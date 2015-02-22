@@ -6,12 +6,17 @@ get "/queue" do
   erb :queue
 end
 
+get "/song/:id" do
+  @song = Song.find(params[:id])
+  erb :"songs/play"
+end
+
 get "/songs" do
   @songs = Song.all
   erb :"songs/index"
 end
 
-get "/song/new" do
+get "/songs/new" do
   @song = Song.new
   erb :"songs/new"
 end
