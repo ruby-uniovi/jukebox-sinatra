@@ -1,0 +1,17 @@
+<div class="new_song">
+  <form action="/song" method="POST">
+    <label>
+      artist
+      <input type="text" name="artist" value="<%=@song.artist%>" />
+    </label>
+    <label>
+      title
+      <input type="text" name="title" value="<%=@song.title%>" />
+    </label>
+    <label>
+      URL
+      <input type="text" name="url" value="<%=@song.url%>" />
+    </label>
+    <input type="submit" />
+  </form>
+</div>
