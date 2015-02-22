@@ -7,3 +7,7 @@ gem 'mongoid'
 group :development do
   gem 'better_errors'  
 end
+
+group :test do
+  gem 'rspec'
+end
