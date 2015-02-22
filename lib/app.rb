@@ -18,7 +18,7 @@ end
 
 post "/song" do
   Song.create(params)
-  redirect_to "/songs"
+  redirect "/songs"
 end
 
 def build_sample_queue
