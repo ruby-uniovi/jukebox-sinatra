@@ -1,9 +1,9 @@
 class Song
-  attr_reader :name, :artist
+  include Mongoid::Document
 
-  def initialize(name, artist)
-    @name = name
-    @artist = artist    
-  end
+  field :artist, :type => String
+  field :title, :type => String
+  field :url, :type => String
+
 end
 
