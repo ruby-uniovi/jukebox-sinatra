@@ -2,7 +2,7 @@
   <table class="songs table">
     <thead>
       <tr>
-        <th>Title</th><th colspan="3">Actions</th> 
+        <th>Title</th><th colspan="3">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -10,11 +10,21 @@
         <tr>
           <td><%= song.artist %> - <%= song.title %></td>
           <td><a href="<%= song.url%>">Source</a></td>
-          <td><a href="/song/<%=song.id%>">Play</a></td>
-          <td><a href="TODO">Add to queue</a></td>
+          <td>
+            <a href="/song/<%=song.id%>" class="btn btn-default" data-song-id="<%=song.id%>" aria-label="Play">
+              <span class="glyphicon glyphicon-play" aria-hidden="true"></span> Play
+            </a>
+          </td>
+          <td>
+            <a class="add-song btn btn-default" data-song-id="<%=song.id%>" aria-label="Add to queue">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add to queue
+            </a>
+          </td>
         </tr>
       <% end %>
     </tbody>
   </table>
+
   <a href="/songs/new" class="btn btn-primary">New</a>
+  <a href="/queue" class="btn btn-default">See queue</a>
 </div>

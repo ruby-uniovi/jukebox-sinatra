@@ -8,9 +8,32 @@ module Jukebox
       Song.create_sample_songs
     end
 
+    get "/" do
+      redirect "/songs"
+    end
+
     get "/queue" do
-      @queue = build_sample_queue
-      erb :queue
+      @queue = SongQueue.instance
+      erb :"queue/show"
+    end
+
+    post "/queue/add" do
+      song = Song.find(params[:song_id])
+
+      SongQueue.instance.songs.push(song)
+
+      status 200
+      body ''
+    end
+
+    post "/queue/remove" do
+      @queue = SongQueue.instance
+      song = Song.find(params[:song_id])
+
+      @queue.songs.delete(song)
+
+      status 200
+      body ''
     end
 
     get "/song/:id" do
@@ -31,10 +54,6 @@ module Jukebox
     post "/song" do
       Song.create(params)
       redirect "/songs"
-    end
-
-    def build_sample_queue
-      SongQueue.new(Song.all)
     end
 
   end

@@ -1,0 +1,38 @@
+<div class="row">
+  <% if @queue.songs.empty? %>
+
+    <p>Empty queue!</p>
+
+  <% else %>
+
+    <table class="songs table">
+      <thead>
+        <tr>
+          <th>Title</th><th colspan="3">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @queue.songs.each do |song| %>
+          <tr>
+            <td><%= song.artist %> - <%= song.title %></td>
+            <td><a href="<%= song.url%>">Source</a></td>
+            <td>
+              <a href="/song/<%=song.id%>" class="btn btn-default" data-song-id="<%=song.id%>" aria-label="Play">
+                <span class="glyphicon glyphicon-play" aria-hidden="true"></span> Play
+              </a>
+            </td>
+            <td>
+              <a class="remove-song btn btn-default" data-song-id="<%=song.id%>" aria-label="Remove from queue">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Remove from queue
+              </a>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  <% end %>
+
+  <a href="/songs" class="btn btn-primary">Back to songs list</a>
+</div>
