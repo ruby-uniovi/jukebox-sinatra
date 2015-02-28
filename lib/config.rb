@@ -2,8 +2,10 @@ require 'mongoid'
 
 if development?
   require 'better_errors'
-  require "sinatra/reloader" 
+  require 'sinatra/reloader'
 end
+
+set :root, File.dirname(__FILE__)
 
 configure do
   set :bind, "0.0.0.0"
@@ -12,7 +14,18 @@ configure do
 end
 
 configure :development do
-  use BetterErrors::Middleware  
-  BetterErrors.application_root = File.expand_path('..', __FILE__)
+  use BetterErrors::Middleware
+  BetterErrors.application_root = :root
 end
 
+require 'sinatra/assetpack'
+
+register Sinatra::AssetPack
+
+assets do
+    serve '/js', from: 'assets/javascripts'
+
+    js :songs, [
+        '/js/songs.js',
+    ]
+end

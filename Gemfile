@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'mongoid'
+gem 'sinatra-assetpack', :require => 'sinatra/assetpack'
 
 group :development do
   gem 'better_errors'
