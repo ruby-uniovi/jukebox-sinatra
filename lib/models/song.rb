@@ -1,16 +1,19 @@
 class Song
+
   include Mongoid::Document
 
   field :artist, :type => String
   field :title, :type => String
   field :url, :type => String
 
+  belongs_to :queue, class_name: "SongQueue", inverse_of: :songs
+
   def self.create_sample_songs
     return unless Song.empty?
     songs_attrs = [
       {
-        :artist => "Benny Goodman", 
-        :title => "So Many Memories", 
+        :artist => "Benny Goodman",
+        :title => "So Many Memories",
         :url => "https://archive.org/download/BennyGoodman141-150of275/BennyGoodman-SoManyMemories1937.mp3"
       },
       {
@@ -30,4 +33,3 @@ class Song
   end
 
 end
-

@@ -1,11 +1,13 @@
 class SongQueue
-  attr_reader :songs
 
-  def initialize(songs)
-    @songs = songs || []
+  include Mongoid::Document
+
+  field :name, :type => String
+
+  has_many :songs
+
+  def self.instance
+    @queue ||= SongQueue.create
   end
 
-  def add_song(song)
-    @songs << song
-  end
 end
