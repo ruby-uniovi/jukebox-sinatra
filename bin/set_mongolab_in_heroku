@@ -1,0 +1,10 @@
+#! /usr/bin/env ruby
+
+puts "Mongolab URL"
+url = gets.chomp
+puts "Mongolab user"
+user = gets.chomp
+puts "Mongolab password"
+pass = gets.chomp
+
+`heroku config:set PROD_MONGODB=mongodb://#{user}:#{pass}@#{url}`
