@@ -1,10 +1,16 @@
-<%= @song.artist %> - <%= @song.title %>
+<div class="row">
+  <div class="col-md-2">
+    <%= @song.artist %> - <%= @song.title %>
+  </div>
 
-<audio src="<%= @song.url %>" controls autoplay>
-  <pre>
-  Your browser doesn't support audio
-  my jukebox won't play.
-  This short poem
-  is all you will get
-  </pre>
-</audio>
+  <div class="col-md-6">
+    <audio src="<%= @song.url %>" controls autoplay>
+      <pre>
+        Your browser doesn't support audio
+        my jukebox won't play.
+        This short poem
+        is all you will get.
+      </pre>
+    </audio>
+  </div>
+</div>

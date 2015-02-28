@@ -1,17 +1,22 @@
-<div class="new_song">
-  <form action="/song" method="POST">
-    <label>
-      artist
-      <input type="text" name="artist" value="<%=@song.artist%>" />
-    </label>
-    <label>
-      title
-      <input type="text" name="title" value="<%=@song.title%>" />
-    </label>
-    <label>
-      URL
-      <input type="text" name="url" value="<%=@song.url%>" />
-    </label>
-    <input type="submit" />
-  </form>
+<div class="new_song row">
+  <div class="col-md-8">
+    <form action="/song" method="POST">
+      <div class="form-group">
+        <label>Artist</label>
+        <input type="text" name="artist" class="form-control" value="<%=@song.artist%>" />
+      </div>
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" name="title" class="form-control" value="<%=@song.title%>" />
+      </div>
+      <div class="form-group">
+        <label>URL</label>
+        <input type="text" name="url" class="form-control" value="<%=@song.url%>" />
+        <p class="help-block">
+          Need some ideas? Try <a href="https://archive.org/search.php?query=collection%3A%2278rpm%22%20AND%20%20jazz">the internet archive</a>
+        </p>
+      </div>
+      <button type="submit" class="btn btn-primary">Let's Swing!</button>
+    </form>
+  </div>
 </div>
