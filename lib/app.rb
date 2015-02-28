@@ -1,35 +1,41 @@
 require 'sinatra'
 require_relative 'config'
 
-configure do
-  Song.create_sample_songs
-end
+module Jukebox
+  class App < Sinatra::Application
 
-get "/queue" do
-  @queue = build_sample_queue
-  erb :queue
-end
+    configure do
+      Song.create_sample_songs
+    end
 
-get "/song/:id" do
-  @song = Song.find(params[:id])
-  erb :"songs/play"
-end
+    get "/queue" do
+      @queue = build_sample_queue
+      erb :queue
+    end
 
-get "/songs" do
-  @songs = Song.all
-  erb :"songs/index"
-end
+    get "/song/:id" do
+      @song = Song.find(params[:id])
+      erb :"songs/play"
+    end
 
-get "/songs/new" do
-  @song = Song.new
-  erb :"songs/new"
-end
+    get "/songs" do
+      @songs = Song.all
+      erb :"songs/index"
+    end
 
-post "/song" do
-  Song.create(params)
-  redirect "/songs"
-end
+    get "/songs/new" do
+      @song = Song.new
+      erb :"songs/new"
+    end
 
-def build_sample_queue
-  SongQueue.new(Song.all)
+    post "/song" do
+      Song.create(params)
+      redirect "/songs"
+    end
+
+    def build_sample_queue
+      SongQueue.new(Song.all)
+    end
+
+  end
 end
