@@ -1,4 +1,3 @@
-require 'sinatra'
 require_relative 'config'
 
 module Jukebox

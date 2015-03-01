@@ -1,3 +1,4 @@
+require 'sinatra'
 require 'mongoid'
 
 if development?
@@ -10,7 +11,7 @@ set :root, File.dirname(__FILE__)
 configure do
   set :bind, "0.0.0.0"
   Mongoid.load!("config/mongoid.yml", settings.environment)
-  Dir["lib/models/**/*.rb"].each {|model_path| require "./#{model_path}"}
+  Dir["lib/models/**/*.rb"].each { |model_path| require "./#{model_path}" }
 end
 
 configure :development do
