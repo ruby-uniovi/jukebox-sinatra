@@ -27,6 +27,12 @@ describe SongQueue do
 
       expect(queue.songs.size).to eql 0
     end
+
+    it "retrieves songs in the order they are inserted" do
+      queue.songs.push(other_song)
+      queue.songs.push(song)
+      expect(queue.songs.map(&:title)).to eql ["Keep it real", "So Many Memories"]
+    end
   end
 
   describe "#instance" do
