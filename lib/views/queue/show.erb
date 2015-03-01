@@ -6,14 +6,16 @@
   <% else %>
 
     <div class="queue-actions text-center">
-      <button type="button" class="btn btn-default" aria-label="Play">
+      <button type="button" class="play-button btn btn-default" aria-label="Play">
         <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
       </button>
 
-      <button type="button" class="btn btn-default" aria-label="Pause">
+      <button type="button" class="pause-button btn btn-default" aria-label="Pause">
         <span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
       </button>
     </div>
+
+    <audio id="jukebox-player"></audio>
 
     <div class="row">
       <table class="songs table">
