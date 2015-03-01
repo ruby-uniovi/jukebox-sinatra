@@ -27,10 +27,9 @@ module Jukebox
     end
 
     post "/queue/remove" do
-      @queue = SongQueue.instance
       song = Song.find(params[:song_id])
 
-      @queue.songs.delete(song)
+      SongQueue.instance.songs.delete(song)
 
       status 200
       body ''
