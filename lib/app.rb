@@ -14,12 +14,12 @@ module Jukebox
 
     get "/queue" do
       @queue = SongQueue.instance
+
       erb :"queue/show"
     end
 
     post "/queue/add" do
       song = Song.find(params[:song_id])
-
       SongQueue.instance.songs.push(song)
 
       status 200
@@ -28,7 +28,6 @@ module Jukebox
 
     post "/queue/remove" do
       song = Song.find(params[:song_id])
-
       SongQueue.instance.songs.delete(song)
 
       status 200
@@ -37,21 +36,27 @@ module Jukebox
 
     get "/song/:id" do
       @song = Song.find(params[:id])
+
       erb :"songs/play"
     end
 
     get "/songs" do
+      @page_title = "Songs Catalog"
       @songs = Song.all
+
       erb :"songs/index"
     end
 
     get "/songs/new" do
+      @page_title = "New song"
       @song = Song.new
+
       erb :"songs/new"
     end
 
     post "/song" do
       Song.create(params)
+
       redirect "/songs"
     end
 
