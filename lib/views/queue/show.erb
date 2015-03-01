@@ -15,7 +15,7 @@
       <tbody>
         <% @queue.songs.each do |song| %>
           <tr>
-            <td><%= song.artist %> - <%= song.title %></td>
+            <td><%= song.display_name %></td>
             <td>
               <a class="remove-song btn btn-default" data-song-id="<%=song.id%>" aria-label="Remove from queue">
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Remove from queue

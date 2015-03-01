@@ -8,7 +8,7 @@
     <tbody>
       <% @songs.each do |song| %>
         <tr>
-          <td><%= song.artist %> - <%= song.title %></td>
+          <td><%= song.display_name %></td>
           <td><a href="<%= song.url%>">Source</a></td>
           <td>
             <a href="/song/<%=song.id%>" class="btn btn-default" data-song-id="<%=song.id%>" aria-label="Play">
