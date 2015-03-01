@@ -21,7 +21,7 @@ module Jukebox
       song = Song.find(params[:song_id])
       SongQueue.instance.songs.push(song)
 
-      confirmation_msg = "'#{song.artist} - #{song.title}' has been successfully added to the Jukebox"
+      confirmation_msg = "'#{song.display_name}' has been successfully added to the Jukebox"
 
       status 200
       body confirmation_msg

@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe Song do
 
+  let(:song) {Song.create(:artist => "Art Blakey & The Jazz Messengers", :title => "A Night in Tunisia", :url => "http://example.com/nothing_here")}
+
   context "test running" do
     it "resets the test database each time it runs" do
       Song.create(:artist => "Velvet Underground", :title => "Venus in Furs")
@@ -11,9 +13,6 @@ describe Song do
   end
 
   context "creation" do
-
-    let(:song) {Song.create(:artist => "Art Blakey & The Jazz Messengers", :title => "A Night in Tunisia", :url => "http://example.com/nothing_here")}
-
     it "has a title" do
       expect(song.title).to eql("A Night in Tunisia")
     end
@@ -28,7 +27,6 @@ describe Song do
   end
 
   describe ".create_sample_songs" do
-
     it "creates some songs if there are none" do
       Song.create_sample_songs
       expect(Song.all).to_not be_empty
@@ -38,9 +36,12 @@ describe Song do
       Song.create(:artist => "A", :title => "T", :url => "URL")
       expect {Song.create_sample_songs}.to_not change {Song.count}
     end
-
   end
 
-
+  describe "#display_name" do
+    it "returns the artist and the title concatenated" do
+      expect(song.display_name).to eql "Art Blakey & The Jazz Messengers - A Night in Tunisia"
+    end
+  end
 
 end

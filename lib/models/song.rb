@@ -32,4 +32,8 @@ class Song
     end
   end
 
+  def display_name
+    "#{artist} - #{title}"
+  end
+
 end
