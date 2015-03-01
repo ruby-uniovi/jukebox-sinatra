@@ -43,17 +43,4 @@ describe SongQueue do
     end
   end
 
-  describe "#audio_sources" do
-    it "returns a list containing all songs' URLs" do
-      queue.songs.push(song, other_song)
-
-      expect(queue.audio_sources).to eql [song.url, other_song.url]
-    end
-
-    it "returns an empty list if there are no songs" do
-      expect(queue.audio_sources).to eql []
-    end
-  end
-
-
 end

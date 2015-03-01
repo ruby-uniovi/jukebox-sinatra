@@ -35,11 +35,11 @@ module Jukebox
       body ''
     end
 
-    get "/queue/sources" do
-      sources = SongQueue.instance.audio_sources
+    get "/queue/songs" do
+      songs = SongQueue.instance.songs
 
       status 200
-      body sources.to_json
+      body songs.to_json
     end
 
     get "/song/:id" do

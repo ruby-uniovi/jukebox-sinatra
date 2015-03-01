@@ -1,3 +1,5 @@
+<audio id="jukebox-player"></audio>
+
 <div class="row">
   <% if @queue.songs.empty? %>
 
@@ -14,8 +16,6 @@
         <span class="glyphicon glyphicon-stop" aria-hidden="true"></span>
       </button>
     </div>
-
-    <audio id="jukebox-player"></audio>
 
     <div class="row">
       <table class="songs table">
@@ -44,3 +44,5 @@
 
   <a href="/songs" class="btn btn-primary">Back to songs list</a>
 </div>
+
+<script src="js/queue_show.js"></script>
