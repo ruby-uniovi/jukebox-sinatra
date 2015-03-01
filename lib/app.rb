@@ -35,6 +35,13 @@ module Jukebox
       body ''
     end
 
+    get "/queue/sources" do
+      sources = SongQueue.instance.audio_sources
+
+      status 200
+      body sources.to_json
+    end
+
     get "/song/:id" do
       @song = Song.find(params[:id])
 
