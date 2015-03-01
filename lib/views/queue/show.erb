@@ -16,12 +16,6 @@
         <% @queue.songs.each do |song| %>
           <tr>
             <td><%= song.artist %> - <%= song.title %></td>
-            <td><a href="<%= song.url%>">Source</a></td>
-            <td>
-              <a href="/song/<%=song.id%>" class="btn btn-default" data-song-id="<%=song.id%>" aria-label="Play">
-                <span class="glyphicon glyphicon-play" aria-hidden="true"></span> Play
-              </a>
-            </td>
             <td>
               <a class="remove-song btn btn-default" data-song-id="<%=song.id%>" aria-label="Remove from queue">
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Remove from queue
