@@ -10,4 +10,8 @@ class SongQueue
     @queue ||= SongQueue.create
   end
 
+  def audio_sources
+    songs.map(&:url)
+  end
+
 end
