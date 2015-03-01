@@ -25,8 +25,5 @@ register Sinatra::AssetPack
 
 assets do
     serve '/js', from: 'assets/javascripts'
-
-    js :songs, [
-        '/js/songs.js',
-    ]
+    serve '/css', from: 'assets/css'
 end
