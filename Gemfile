@@ -17,5 +17,5 @@ group :test do
   gem 'rake'
 
   # Code Climate
-  gem "codeclimate-test-reporter", require: nil
+  gem "codeclimate-test-reporter", :require => nil
 end
