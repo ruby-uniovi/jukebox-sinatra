@@ -3,9 +3,17 @@ CodeClimate::TestReporter.start
 
 require 'sinatra'
 set :environment, :test
-require_relative '../lib/config'
+
+require 'capybara'
+require 'capybara/dsl'
+
+require_relative '../lib/app'
+
+Capybara.app = Jukebox::App
 
 RSpec.configure do |config|
+
+  config.include Capybara::DSL
 
   config.before do
     Mongoid.purge!

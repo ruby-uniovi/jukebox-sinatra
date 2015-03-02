@@ -18,4 +18,6 @@ group :test do
 
   # Code Climate
   gem "codeclimate-test-reporter", :require => nil
+
+  gem 'capybara'
 end
