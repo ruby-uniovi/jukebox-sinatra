@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><%= @page_title || "Jukebox" %></title>
+    <title><%= @window_title || @page_title %></title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -22,7 +22,9 @@
 
   <body>
     <div class="container">
-      <h1><%= @page_title || "Jukebox" %></h1>
+      <% if @page_title %>
+        <h1><%= @page_title %></h1>
+      <% end %>
       <%= yield %>
     </div>
 

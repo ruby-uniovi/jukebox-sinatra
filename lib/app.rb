@@ -8,10 +8,15 @@ module Jukebox
     end
 
     get "/" do
-      redirect "/songs"
+      @window_title = "Jukebox"
+      @marketing_quote = ["It's like being in 1934!", "Better than Grooveshark", "Spotify's next logical acquisition"].sample
+      @author = ["No one ever", "Author's mother", "Clueless tech journalist"].sample
+
+      erb :"jukebox/hello"
     end
 
     get "/queue" do
+      @page_title = "Jukebox"
       @queue = SongQueue.instance
 
       erb :"queue/show"
@@ -44,6 +49,7 @@ module Jukebox
 
     get "/song/:id" do
       @song = Song.find(params[:id])
+      @page_title = @song.display_name
 
       erb :"songs/play"
     end
