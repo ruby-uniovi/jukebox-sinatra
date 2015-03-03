@@ -26,25 +26,18 @@ module Jukebox
       song = Song.find(params[:song_id])
       SongQueue.instance.songs.push(song)
 
-      confirmation_msg = "'#{song.display_name}' has been successfully added to the Jukebox"
-
-      status 200
-      body confirmation_msg
+      "'#{song.display_name}' has been successfully added to the Jukebox"
     end
 
     post "/queue/remove" do
       song = Song.find(params[:song_id])
       SongQueue.instance.songs.delete(song)
-
-      status 200
-      body ''
+      ''
     end
 
     get "/queue/songs" do
       songs = SongQueue.instance.songs
-
-      status 200
-      body songs.to_json
+      songs.to_json
     end
 
     get "/song/:id" do
