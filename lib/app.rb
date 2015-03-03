@@ -49,7 +49,7 @@ module Jukebox
     end
 
     get "/songs" do
-      @page_title = "Songs Catalog"
+      @page_title = "Song library"
       @songs = Song.all
 
       erb :"songs/index"
