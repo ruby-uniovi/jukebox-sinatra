@@ -4,6 +4,7 @@ gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'mongoid'
 gem 'sinatra-assetpack', :require => 'sinatra/assetpack'
+gem 'sinatra-partial', :require => 'sinatra/partial'
 
 group :development do
   gem 'better_errors'

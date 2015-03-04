@@ -1,4 +1,6 @@
 require 'sinatra'
+require 'sinatra/partial'
+require 'sinatra/assetpack'
 require 'mongoid'
 
 if development?
@@ -19,11 +21,13 @@ configure :development do
   BetterErrors.application_root = :root
 end
 
-require 'sinatra/assetpack'
-
 register Sinatra::AssetPack
+register Sinatra::Partial
+set :partial_template_engine, :erb
 
 assets do
     serve '/js', from: 'assets/javascripts'
     serve '/css', from: 'assets/css'
 end
+
+
