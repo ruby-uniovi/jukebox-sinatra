@@ -60,8 +60,6 @@ get "/songs/new" do
 end
 
 post "/song" do
-  Song.create(params)
-
-  redirect "/songs"
+  "Something else should be happening here..."
 end
 

@@ -11,6 +11,7 @@ describe "POST /song" do
       click_button("Let's Swing!")
     end
 
+    expect(Song.count).to eql 1
     expect(Song.first.display_name).to eql "Dizzie Gillespie - Salt Peanuts"
   end
 
