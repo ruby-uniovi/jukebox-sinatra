@@ -9,8 +9,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
-    <!-- 2 tweaks for queue/show view (check _scripts) -->
-    <link rel="stylesheet" href="css/queue.css">
+    <%= css :jukebox %>
   </head>
 
   <body>
@@ -19,8 +18,11 @@
         <h1><%= @page_title %></h1>
       <% end %>
 
-      <!-- Renders partial @ "lib/views/_common_scripts.erb" -->
-      <%= partial("_common_scripts") %>
+      <!-- jQuery (required by Bootstrap's JavaScript plugins) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+      <!-- Bootstrap's JavaScript plugins -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
       <!-- Renders view by means of "yielding" to it -->
       <%= yield %>
