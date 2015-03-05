@@ -31,7 +31,8 @@ end
 post "/queue/remove" do
   song = Song.find(params[:song_id])
   SongQueue.instance.songs.delete(song)
-  ''
+
+  ""
 end
 
 get "/queue/songs" do
@@ -47,7 +48,7 @@ get "/song/:id" do
 end
 
 get "/songs" do
-  @page_title = "Song library"
+  @page_title = "Song Library"
   @songs = Song.all
 
   erb :"songs/index"
