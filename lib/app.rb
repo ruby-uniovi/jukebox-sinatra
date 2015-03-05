@@ -8,8 +8,6 @@ end
 
 get "/" do
   @window_title = "Jukebox"
-  @marketing_quote = ["It's like being in 1934!", "Better than Grooveshark", "Spotify's next logical acquisition"].sample
-  @author = ["No one ever", "Author's mother", "Clueless tech journalist"].sample
 
   erb :"jukebox/hello"
 end
