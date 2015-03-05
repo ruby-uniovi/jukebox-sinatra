@@ -36,8 +36,8 @@ post "/queue/remove" do
 end
 
 get "/queue/songs" do
-  songs = SongQueue.instance.songs
-  songs.to_json
+  #An empty queue... This somehow doesn't seem right.
+  [].to_json
 end
 
 get "/song/:id" do
