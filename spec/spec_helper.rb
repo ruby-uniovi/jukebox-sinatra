@@ -1,5 +1,5 @@
 require 'codeclimate-test-reporter'
-CodeClimate::TestReporter.start
+CodeClimate::TestReporter.start if ENV["CODECLIMATE_REPO_TOKEN"]
 
 require 'sinatra'
 set :environment, :test
