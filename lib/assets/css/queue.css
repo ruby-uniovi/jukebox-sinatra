@@ -1,3 +1,7 @@
 .queue-actions {
   margin: 2em 0 2em 0;
 }
+
+.playing-now {
+  background-color: #E8E6B3;
+}
