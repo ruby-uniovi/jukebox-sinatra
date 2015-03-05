@@ -10,4 +10,8 @@ class SongQueue
     @queue ||= SongQueue.create
   end
 
+  def self.reset_instance!
+    @queue = nil
+  end
+
 end

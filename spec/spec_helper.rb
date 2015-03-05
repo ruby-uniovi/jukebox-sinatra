@@ -17,6 +17,7 @@ RSpec.configure do |config|
 
   config.before do
     Mongoid.purge!
+    SongQueue.reset_instance!
   end
 
 end
