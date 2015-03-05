@@ -3,6 +3,7 @@ require 'spec_helper'
 describe "POST /song" do
   it "creates a new song when submitting the form" do
     visit "/songs/new"
+
     within "form" do
       fill_in "artist", :with => "Dizzie Gillespie"
       fill_in "title", :with => "Salt Peanuts"
