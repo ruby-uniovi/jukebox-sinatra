@@ -9,7 +9,7 @@ require 'capybara/dsl'
 
 require_relative '../lib/app'
 
-Capybara.app = Jukebox::App
+Capybara.app = Sinatra::Application
 
 RSpec.configure do |config|
 
