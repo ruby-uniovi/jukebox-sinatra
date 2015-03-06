@@ -8,13 +8,17 @@ This project contains the exercises for the ruby@uniovi workshop (day 2).
 
 ruby@uniovi is a 2-day workshop which will be held in the University of Oviedo (Spain), from 4th to 6th March 2015.
 
-## Hack it!
+## Day 2: Hands-on lab
+
+Experience how it feels to work as a professional web developer for a few hours while completing the User Stories provided in this [Trello board].
+
+## Hack the jukebox!
 
 The recommended way to work with this sample app is within the ruby@uniovi virtualized development environment.
 
 Refer to http://github.com/ruby-uniovi/rubyeii for installation instructions.
 
-Workshop participants could experience how it feels to work as a professional web developer for a few hours while completing the User Stories provided in this [Trello board].
+Open the project folder with Sublime Text 2 (`subl /vagrant/projects/jukebox-sinatra` from the command line) to easily edit the code.
 
 ## Roadmap / Support
 
