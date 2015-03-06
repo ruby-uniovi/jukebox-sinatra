@@ -10,7 +10,7 @@ ruby@uniovi is a 2-day workshop which will be held in the University of Oviedo (
 
 ## Day 2: Hands-on lab
 
-Experience how it feels to work as a professional web developer for a few hours while completing the User Stories provided in this [Trello board].
+Experience how it feels to work as a professional web developer for a few hours while completing the User Stories provided in this [Trello board](https://trello.com/b/ziGtcloe/day-2-user-stories).
 
 ## Hack the jukebox!
 
