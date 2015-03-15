@@ -4,7 +4,7 @@
 
 [![Code Climate](https://codeclimate.com/github/ruby-uniovi/jukebox-sinatra/badges/gpa.svg)](https://codeclimate.com/github/ruby-uniovi/jukebox-sinatra)
 
-This project contains the exercises for the ruby@uniovi workshop (day 2).
+This project contains the exercises for the ruby@uniovi workshop (day 2). Slides with some extra information can be found on [Speaker Deck](https://speakerdeck.com/dgsuarez/ruby-on-the-web).
 
 ruby@uniovi is a 2-day workshop which will be held in the University of Oviedo (Spain), from 4th to 6th March 2015.
 
