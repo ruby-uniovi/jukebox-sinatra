@@ -12,12 +12,9 @@ end
 
 group :test do
   gem 'rspec'
-
-  # Travis
-  gem 'rake'
-
-  # Code Climate
-  gem "codeclimate-test-reporter", :require => nil
-
   gem 'capybara'
+
+  gem 'rake' # Travis
+
+  gem "codeclimate-test-reporter", :require => nil # Code Climate
 end
